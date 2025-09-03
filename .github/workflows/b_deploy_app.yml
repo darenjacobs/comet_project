@@ -1,9 +1,9 @@
 name: 'Build, Test, and Deploy'
 on:
   push:
-    - branches: [main]
-  path:
-    - 'github/workflows/**'
+    branches: [main]
+    paths:
+      - 'github/workflows/**'
 
 env:
   AWS_REGION: us-east-1
