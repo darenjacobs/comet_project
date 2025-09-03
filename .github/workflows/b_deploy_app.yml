@@ -1,12 +1,10 @@
 name: 'Build, Test, and Deploy'
 on:
-  workflow_run:
-    workflows:
-      - 'infrastructure with terraform' # must match the name: in a_terraform.yml exactly
-    types:
-      - completed
-    branches:
-      - main
+  workflow_dispatch:
+    push:
+      - branches: [main]
+    path:
+      - 'github/workflows/**'
 
 env:
   AWS_REGION: us-east-1
